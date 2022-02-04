@@ -1,5 +1,7 @@
 package com.purple.myapplication.opengl;
 
+import static com.purple.myapplication.util.Utils.assertTrue;
+
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -9,7 +11,6 @@ import android.opengl.Matrix;
 import com.purple.myapplication.util.IntArray;
 import com.purple.myapplication.util.MLog;
 import com.purple.myapplication.util.Utils;
-import junit.framework.Assert;
 
 import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.opengles.GL11;
@@ -107,7 +108,7 @@ public class GLES11Canvas implements GLESCanvas {
 
     @Override
     public void setSize(int width, int height) {
-        Assert.assertTrue(width >= 0 && height >= 0);
+        assertTrue(width >= 0 && height >= 0);
 
         if (mTargetTexture == null) {
             mScreenWidth = width;
@@ -135,7 +136,7 @@ public class GLES11Canvas implements GLESCanvas {
 
     @Override
     public void setAlpha(float alpha) {
-        Assert.assertTrue(alpha >= 0 && alpha <= 1);
+        assertTrue(alpha >= 0 && alpha <= 1);
         mAlpha = alpha;
     }
 
@@ -146,7 +147,7 @@ public class GLES11Canvas implements GLESCanvas {
 
     @Override
     public void multiplyAlpha(float alpha) {
-        Assert.assertTrue(alpha >= 0 && alpha <= 1);
+        assertTrue(alpha >= 0 && alpha <= 1);
         mAlpha *= alpha;
     }
 

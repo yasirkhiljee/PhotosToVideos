@@ -2,9 +2,10 @@ package com.purple.myapplication.opengl;
 
 import android.graphics.Bitmap;
 import android.opengl.GLES20;
-import junit.framework.Assert;
+//import junit.framework.Assert;
 
 import static com.purple.myapplication.util.GLUtil.NO_TEXTURE;
+import static com.purple.myapplication.util.Utils.assertTrue;
 
 // BitmapTexture is a texture whose content is specified by a fixed Bitmap.
 //
@@ -26,7 +27,7 @@ public class BitmapTexture extends UploadedTexture {
 
     public BitmapTexture(Bitmap bitmap, boolean hasBorder) {
         super(hasBorder);
-        Assert.assertTrue(bitmap != null && !bitmap.isRecycled());
+        assertTrue(bitmap != null && !bitmap.isRecycled());
         mContentBitmap = bitmap;
         mIsRecycled = false;
     }
